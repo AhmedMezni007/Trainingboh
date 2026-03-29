@@ -3,33 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fitness App</title>
+    <title>Ahmed Fitness</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Welcome to Your Fitness Journey</h1>
+        <h1>Ahmed Fitness App</h1>
+        <nav>
+            <ul>
+                <li><a href="#home" onclick="showPage('home')">Home</a></li>
+                <li><a href="#train" onclick="showPage('train')">Train</a></li>
+                <li><a href="#eat" onclick="showPage('eat')">Eat</a></li>
+                <li><a href="#track" onclick="showPage('track')">Track</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section id="workouts">
-            <h2>Workouts</h2>
+        <section id="home" class="page">
+            <h2>Welcome to Ahmed Fitness</h2>
+            <p>Your journey towards a healthier life starts here.</p>
+        </section>
+        <section id="train" class="page" style="display:none;">
+            <h2>Training Phases</h2>
+            <h3>Phase 1: Foundation</h3>
             <ul>
-                <li>Push-ups</li>
-                <li>Squats</li>
-                <li>Running</li>
+                <li>Exercise 1: Push-ups</li>
+                <li>Exercise 2: Squats</li>
+            </ul>
+            <h3>Phase 2: Strength</h3>
+            <ul>
+                <li>Exercise 1: Deadlifts</li>
+                <li>Exercise 2: Bench Press</li>
+            </ul>
+            <h3>Phase 3: Endurance</h3>
+            <ul>
+                <li>Exercise 1: Running</li>
+                <li>Exercise 2: Cycling</li>
             </ul>
         </section>
-        <section id="nutrition">
-            <h2>Nutrition</h2>
-            <p>Your diet is key to achieving your fitness goals!</p>
+        <section id="eat" class="page" style="display:none;">
+            <h2>Meal Planning</h2>
+            <p>Here are some meal suggestions with prices in Spanish supermarkets:</p>
+            <ul>
+                <li>Chicken Breast - €5/kg</li>
+                <li>Brown Rice - €1.5/kg</li>
+                <li>Broccoli - €2.5/kg</li>
+            </ul>
         </section>
-        <section id="progress">
-            <h2>Track Your Progress</h2>
-            <p>Keep a log of your workouts and nutrition.</p>
+        <section id="track" class="page" style="display:none;">
+            <h2>Weight Tracking</h2>
+            <canvas id="weightChart"></canvas>
+            <h3>Daily Schedule</h3>
+            <p>Track your daily workouts and meals.</p>
         </section>
     </main>
     <footer>
-        <p>&copy; 2026 Fitness App. All Rights Reserved.</p>
+        <p>Information on supplements and dark theme styling included.</p>
     </footer>
+    <script>
+        function showPage(page) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.style.display = 'none');
+            document.getElementById(page).style.display = 'block';
+        }
+    </script>
 </body>
 </html>
